@@ -1,0 +1,40 @@
+what is devops
+what is azure devops
+azure devops services
+creation of devops account
+what is ogranization
+what is project 
+what is team
+how to add users 
+manage users
+
+
+day2
+
+what is boards,workitem,kanban board
+work item types Epic ,issues ,task
+how to update work item
+adding task to an issue
+workitem brief 
+
+day3
+
+workflow on Agile,CMMI,Scrum
+
+Day4
+what is query,how to create query
+adding new query ,running the query
+
+what is inherited process,how to create inherited process
+
+day4
+customizing boards,work items,tag 
+
+Day5
+working with repositories,how to clone repository with git ,working with pull ,push and commits.
+modfying local repository and update to remote repository 
+
+Day6
+
+how to create branch with server repository,switching brnaches and changing in branches and update
+checkout ,pushing and pull ,compare them
