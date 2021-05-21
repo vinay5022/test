@@ -1,0 +1,10 @@
+git ---it is verison control system tool
+
+
+jenkins--Continuous Integration tool .jenkins achieves Continuous Integration with the help of plugins. Plugins allow the integration of Various DevOps stages. If you want to integrate a particular tool, you need to install the plugins for that tool. For example Git, Maven 2 project, Amazon EC2, HTML publisher etc.
+
+maven--build
+selenium -testing tool
+ansible-- continous deployment
+nagios--continous monitorting
+puppet-- configurinng management
