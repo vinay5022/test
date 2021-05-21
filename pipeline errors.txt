@@ -1,0 +1,64 @@
+Scheduled trigger time zone conversions
+
+YAML scheduled triggers are set using UTC time zone. If your scheduled triggers don't seem to be firing at the right time, confirm the conversions between UTC and your local time zone, taking into account the day setting as well.
+UI settings override YAML scheduled triggers
+
+If your YAML pipeline has both YAML scheduled triggers and UI defined scheduled triggers, only the UI defined scheduled triggers are run. To run the YAML defined scheduled triggers in your YAML pipeline, you must remove the scheduled triggers defined in the pipeline settings UI.
+
+To access the pipeline settings UI from a YAML pipeline, edit your pipeline, choose ... and then Triggers.
+Remove all scheduled triggers.
+
+Once all UI scheduled triggers are removed, a push must be made in order for the YAML scheduled triggers to start running.
+Pipeline queues but never gets an agent
+
+If your pipeline queues but never gets an agent, check the following items.
+
+    Parallel job limits - no available agents or you have hit your free limits
+    Can't access Azure Key Vault behind firewall from Azure DevOps
+    You don't have enough concurrency
+    Your job may be waiting for approval
+    All available agents are in use
+    Demands that don't match the capabilities of an agent
+    Check Azure DevOps status for a service degradation
+Parallel job limits - no available agents or you have hit your free limits
+
+If you are currently running other pipelines, you may not have any remaining parallel jobs, or you may have hit your free limits.
+
+To check your limits, navigate to Project settings, Parallel jobs.
+Can't access Azure Key Vault behind firewall from Azure DevOps
+
+If you can't access Azure Key Vault from your pipeline, the firewall might be blocking the Azure DevOps Services agent IP address. The IP addresses published in the weekly JSON file must be allowlisted. For more information, see Microsoft-hosted agents: Networking.
+Your job may be waiting for approval
+
+Your pipeline may not move to the next stage because it is waiting on approval.
+All available agents are in use
+
+Jobs may wait if all your agents are currently busy. To check your agents:
+
+    Navigate to https://dev.azure.com/{org}/_settings/agentpools
+
+    Select the agent pool to check
+Job time-out
+
+A pipeline may run for a long time and then fail due to job time-out. Job timeout closely depends on the agent being used. Free Microsoft hosted agents have a max timeout of 60 minutes per job for a private repository and 360 minutes for a public repository. To increase the max timeout for a job, you can opt for any of the following.
+
+    Buy a Microsoft hosted agent which will give you 360 minutes for all jobs, irrespective of the repository used
+    Use a self-hosted agent to rule out any timeout issues due to the agent
+Pipeline fails to complete
+
+If your pipeline gets an agent but fails to complete, check the following common issues. If your issue doesn't seem to match one of these, see Get logs to diagnose problems.
+
+    Job time-out
+    Issues downloading code
+    My pipeline is failing on a command-line step such as MSBUILD
+    File or folder in use errors
+    Intermittent or inconsistent MSBuild failures
+    Process stops responding
+    Line endings for multiple platforms
+    Variables having ' (single quote) appended
+    Service Connection related issues
+Libraries aren't installed for Python application when script executes
+
+When a Python application is deployed, in some cases, a CI/CD pipeline runs and the code is deployed successfully, but the requirements.txt file that's responsible for installing all dependency libraries doesn't execute.
+
+To install the dependencies, use a post-deployment script in the App Service deployment task. The following example shows the command you must use in the post-deployment script. You can update the script for your scenario.
